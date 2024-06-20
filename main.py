@@ -29,7 +29,7 @@ class Board():
         self.marked_boxes = 0
 
     def final_state(self,show = False):
-        #checks if anyone has won yet, return 1 if player 1 has won and 2 if player 2 has won
+        #checks if anyone has won yet, return 1 if player 1 has won and 2 if player 2 has won and 0 if noone has won
 
         for col in range(3):
             if self.boxes[0][col] == self.boxes[1][col] == self.boxes[2][col] != 0:
@@ -49,7 +49,7 @@ class Board():
             if show:
                 pygame.draw.line(screen, CIRCLE_COLOR, (GAME_WIDTH - 30, 30),(30, GAME_HEIGHT - 30), LINE_WIDTH-3)
             return self.boxes[0][2]
-        return 0  # if noone has won yet
+        return 0
 
     def mark_box(self, row, col, p1_turn):
         if p1_turn:
